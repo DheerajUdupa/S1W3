@@ -109,11 +109,16 @@ def ex4c():
 
 def ex5a():
     shift = input("Enter the number of characters to shift by: ")
-    userInput = input("Enter the string to encrypt: ").lower()
+    userInput = input("Enter the string to encrypt: ").lower().split()
+    userInput = "".join(userInput)
+    returnString = ""
     for character in userInput:
         oldIndex = string.ascii_lowercase.find(character)
         newIndex = (int(oldIndex) + int(shift)) % 26
         print(newIndex)
-
+        returnString += string.ascii_lowercase[newIndex]
+        
+    return returnString
+        
 
 ex5a()
